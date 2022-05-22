@@ -1,0 +1,302 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 50%;
+        background: #f3ca20;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 50%;
+        background: #101820ff;
+    }
+
+}
+
+.reset {
+    position: fixed;
+    top: 4em;
+    right: 4em;
+    border: 0;
+    font-family: 'Poppins';
+    background: #fff;
+    padding: 1em 2.5em;
+    color: #000;
+    font-size: 16px;
+    font-weight:bold;
+    text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.1);
+    transition: 250ms ease;
+    cursor: pointer;
+    @media(max-width:900px){
+        left: 50%;
+        transform: translateX(-50%);
+        right: unset !important;
+        top: 2em;
+
+        &:hover {
+            animation: unset !important;
+        }
+    }
+    &:hover {
+        animation: move 0.4s ease;
+    
+        
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(-5%);
+        opacity: 0.5;
+        color: #fff;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.okvir {
+    min-width: 700px;
+    min-height: 700px;
+    position: relative;
+    display: grid;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    @media(max-width:1090px){
+        min-width: 600px;
+        min-height: 600px;
+    }
+
+    @media(max-width:1090px){
+        min-width: 500px;
+        min-height: 500px;
+    }
+
+    @media(max-width:900px){
+        min-height: 70vh;
+    }
+    
+    @media (max-width:320px){
+        min-height: 40vh;
+    }
+    @media(max-width:770px){
+        min-width: 90%;
+        min-height: 50vh;
+        }
+
+
+    .top {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2em;
+        border-radius: 50%;
+        background: red;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 50%;
+        border-top: 4px solid #101820ff;
+        border-left: 4px solid #101820ff;
+        border-bottom: 4px solid #101820ff;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        border-top:4px solid #f3ca20;
+        border-bottom: 4px solid #f3ca20;
+        border-right: 4px solid #f3ca20;
+    }
+    
+
+    .click__place {
+        border: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        font-family: 'Luckiest Guy', cursive;
+
+        &:first-of-type {border-left: 0;border-top: 0;}
+        &:nth-child(3){border-top: 0;}
+        &:nth-child(4){border-top: 0;border-right: 0;}
+        &:nth-child(5){border-left: 0;}
+        &:nth-child(7){border-right: 0;}
+        &:nth-child(8){border-left: 0;border-bottom: 0;}
+        &:nth-child(9){border-bottom: 0;}
+        &:nth-child(10){border-bottom: 0;border-right: 0;}
+
+        span {
+            font-size: 60px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+        }
+    }
+}
+
+.player--x {
+    color: rgb(21, 83, 146);
+}
+.player--o {
+    color: #f3ca20;
+}
+
+
+
+
+.preview-player--x {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: url('../assets/cursor-x.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+  
+    }
+}
+
+.preview-player--o {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        bottom: 30px;
+        right: 30px;
+        background-image: url('../assets/cursor-o.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+    }
+}
+
+
+.message {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    padding: 2em 4em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    left: -50%;
+    transition: 250ms all;
+    max-width:400px;
+    text-align: center;
+z-index:100;
+
+@media (max-width:700px){
+    transform: translateX(-50%);
+    padding: 1.5em 1em;
+    min-width: 90% !important;
+    margin: 0 auto;
+    top: unset !important;
+    bottom: 1em;
+    font-size: 16px;
+}
+
+}
+
+
+
+@keyframes show {
+     from {
+         left: 50%;
+         top: 50%;
+     }
+
+     to {
+         left: 20%;
+         top: 20%;
+     }
+}
+
+
+.winAnimation {
+animation: winAnimations 0.8s infinite linear;
+color: yellowgreen;
+}
+
+@keyframes winAnimations{
+    from {
+        transform: scale(1.0);
+        margin-top: 0;
+        text-shadow: 1px 2px 3px rgba($color: #fff, $alpha: 0.1);
+    } 
+    50%{
+        transform: scale(1.3);
+        margin-top: -10px;
+        text-shadow: 1px 2px 3px rgba($color: #fff, $alpha: 0.3);
+    }
+    to {
+        transform: scale(1.0);
+        margin-top: 0px;
+        text-shadow: 1px 2px 3px rgba($color: #fff, $alpha: 0.1);
+    }
+}

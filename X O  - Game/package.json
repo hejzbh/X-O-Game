@@ -1,0 +1,16 @@
+{
+  "name": "xo-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "heyzdev / Hazim Tulumovic",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.22.4",
+    "parcel": "^2.5.0",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
